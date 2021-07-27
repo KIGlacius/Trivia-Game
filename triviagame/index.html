@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Trivia Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <img
+          class="header"
+          src="/imgs/chooseyourtrivia.png"
+          alt="Trivia Game"
+        />
+      </div>
+      <div>
+        <input
+          class="icons goku__icon"
+          type="image"
+          src="/imgs/goku_base.png"
+          alt="Goku"
+        />
+        <span class="hidden goku__hover"
+          >Hi, I’m Goku! Are you ready to test your skills? I won’t hold back!
+        </span>
+        <input
+          class="icons yoruichi__icon"
+          type="image"
+          src="/imgs/yoruichi_base.png"
+          alt="Yoruichi"
+        />
+        <span class="hidden yoruichi__hover"
+          >Think you've got what it takes? Hmph. I doubt you can keep up with
+          me.
+        </span>
+        <input
+          class="icons laxus__icon"
+          type="image"
+          src="/imgs/laxus_base.png"
+          alt="Laxus"
+        />
+        <span class="hidden laxus__hover"
+          >I bet you won't even get past the first round.</span
+        >
+      </div>
+
+      <div class="confirm__container"></div>
+    </div>
+    <div class="container__icon"></div>
+    <div class="hidden overlay"></div>
+    <span class="hidden score__box">
+      <p class="score">Score</p>
+      <p class="score__num">3</p>
+    </span>
+  </body>
+</html>

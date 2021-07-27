@@ -1,0 +1,280 @@
+body {
+  background-color: rgba(54, 68, 102, 1);
+}
+.close__window {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  color: rgb(245, 238, 238);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.confirm__selection {
+  height: 117px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 59px;
+  text-align: center;
+
+  color: #ffffff;
+
+  font-weight: bold;
+}
+
+.confirm__paragraph {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 30px;
+  font-family: Roboto;
+  text-align: center;
+}
+
+.header {
+  position: absolute;
+  width: 1004px;
+  height: 236px;
+  left: 266px;
+  top: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.icons {
+  top: 300px;
+}
+
+.goku__hover {
+  padding: 10px;
+  position: absolute;
+  width: 200px;
+  height: 88px;
+  left: 266px;
+  top: 500px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #ffffff;
+
+  background: #1a3b62;
+}
+.goku__icon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 266px;
+}
+
+.confirm__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgb(0 0 0 / 30%);
+  z-index: 10;
+  background: #1a3b62;
+}
+
+.yoruichi__hover {
+  padding: 7.5px;
+  position: absolute;
+  width: 200px;
+  height: 88px;
+  left: 668px;
+  top: 500px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #ffffff;
+
+  background: #1a3b62;
+}
+.yoruichi__icon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 668px;
+}
+.laxus__hover {
+  padding: 15px;
+  position: absolute;
+  width: 200px;
+  height: 88px;
+  left: 1070px;
+  top: 500px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #ffffff;
+
+  background: #1a3b62;
+}
+.laxus__icon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 1070px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.start {
+  display: block;
+  margin: auto;
+  padding: 20px;
+  border-radius: 30%;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.start__icon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 100px;
+  top: 100px;
+}
+
+.question {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 59px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.question__field {
+  position: absolute;
+  padding-top: 30px;
+  width: 850.85px;
+  height: 200px;
+  left: 343px;
+  top: 100px;
+  background-color: #1a3b62;
+}
+
+.question__text {
+  margin-top: 10px;
+  font-size: 30px;
+}
+.score {
+  height: 89px;
+  font-size: 50px;
+  line-height: 59px;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+.score__num {
+  font-size: 100px;
+  text-align: center;
+  color: #ffffff;
+}
+.score__box {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 1237px;
+  top: 100px;
+
+  background: #1a3b62;
+}
+
+.answer__field {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  padding: 50px;
+  width: 851px;
+  left: 343px;
+  top: 348px;
+
+  background: #1a3b62;
+}
+.answer {
+  width: 200px;
+  height: 50px;
+  margin: 40px;
+  background: #364466;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.answer__one {
+  opacity: 1;
+}
+
+.answer__two {
+  opacity: 1;
+}
+
+.answer__three {
+  opacity: 1;
+}
+
+.answer__four {
+  opacity: 1;
+}
+
+.restart {
+  position: absolute;
+  left: 10.5%;
+  top: 4%;
+  cursor: pointer;
+  border-radius: 20%;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.right__answer {
+  padding: 10px;
+  position: absolute;
+  width: 200px;
+  height: 70px;
+  left: 100px;
+  top: 300px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #ffffff;
+
+  background: #1a3b62;
+}
