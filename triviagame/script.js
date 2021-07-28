@@ -5,17 +5,13 @@ const confirmContainer = document.querySelector('.confirm__container');
 const container = document.querySelector('.container');
 const containerIcon = document.querySelector('.container__icon');
 const scoreNumEl = document.querySelector('.score__num');
-
+const iconAnswer = document.querySelector('.right__answer');
 const gokuIcon = document.querySelector('.goku__icon');
 const gokuHoverBox = document.querySelector('.goku__hover');
-
 const yoruichiIcon = document.querySelector('.yoruichi__icon');
 const yoruichiHoverBox = document.querySelector('.yoruichi__hover');
-
 const laxusIcon = document.querySelector('.laxus__icon');
 const laxusHoverBox = document.querySelector('.laxus__hover');
-
-// const startIcon = document.querySelector('.start__icon');
 const scoreBox = document.querySelector('.score__box');
 const icons = document.querySelectorAll('.icons');
 const overlay = document.querySelector('.overlay');
@@ -23,6 +19,8 @@ const btnClose = document.querySelector('.close__window');
 const btnStart = document.querySelector('.start');
 const answerBox = document.querySelectorAll('.answer');
 const restartBtn = document.querySelector('.restart');
+
+// Misc variables
 
 let body = document.body;
 let html = '';
@@ -80,42 +78,35 @@ const questionLaxusOne = {
 };
 
 const questionLaxusTwo = {
-  question: 'The founder of Fairy Tail is what to Laxus?',
-  questionAnswers: [
-    'His grandfather',
-    'His father',
-    'His brother',
-    'His sister',
-  ],
+  question: "What is Laxus' power?",
+  questionAnswers: ['Fire', 'Water', 'Lightning', 'Ice'],
 };
 
 const questionLaxusThree = {
-  question: 'The founder of Fairy Tail is what to Laxus?',
-  questionAnswers: [
-    'His grandfather',
-    'His father',
-    'His brother',
-    'His sister',
-  ],
+  question: "Where is Laxus' guild mark location?",
+  questionAnswers: ['His chest', 'His thigh', 'His abdomen', 'His arm'],
 };
 //..............................Functions.............................................
-
+// Subtract score on wrong answer
 const scoreCounter = function () {
   scoreNum--;
   scoreNumEl.textContent = scoreNum;
 };
+
+// Restart game
 const restartGame = function () {
   location.reload();
 };
+
+// Hide character snippet
 const hideHoverBox = function () {
-  // Hide character snippet
   gokuHoverBox.classList.add('hidden');
   yoruichiHoverBox.classList.add('hidden');
   laxusHoverBox.classList.add('hidden');
 };
 
+// Show confirm window
 const generateConfirmWindow = function (charName, charSeries) {
-  // Show confirm window
   return `<div class="confirm__window">
   <btn class="close__window">X</btn>
     <h1 class="confirm__selection">Confirm Selection</h1>
@@ -127,14 +118,14 @@ const generateConfirmWindow = function (charName, charSeries) {
     </div>`;
 };
 
+// Show lost window on game over
 const generateLostWindow = function () {
-  // Show lost window on game over
   return `<div class="confirm__window">
     <h1 class="confirm__selection">You lost!</h1>
     <button class="start">RETRY</button>
     </div>`;
 };
-
+// Show won window on game win
 const generateWonWindow = function () {
   return `<div class="confirm__window">
   <h1 class="confirm__selection">You won!</h1>
@@ -142,27 +133,29 @@ const generateWonWindow = function () {
   </div>`;
 };
 
+// Close window and go back to main page
 const closeConfirmWindow = function () {
-  // Close window and go back to main page
   overlay.classList.add('hidden');
   confirmContainer.innerHTML = '';
 };
 
-const changeIcon = function (charName, imgType) {
+// Change icon and icon text
+const changeIcon = function (charName, imgType, iconStr) {
   containerIcon.innerHTML = `<img
   class="start__icon"
   type="image"
   src="/imgs/${charName}_${imgType}.png"
   alt="Start ${charName[0].toUpperCase() + charName.slice(1)}"
 />`;
+  iconAnswer.classList.remove('hidden');
+  iconAnswer.textContent = iconStr;
 };
-const startGame = function (charName, charQuestions, questionNum, imgType) {
-  // Start game and go to first question
+
+// Start game and go to first question
+const startGame = function (charQuestions, questionNum) {
   container.innerHTML = '';
   scoreBox.classList.remove('hidden');
   overlay.classList.add('hidden');
-  changeIcon(charName, imgType);
-
   container.innerHTML = `<div>
   <span class='question__field'>
   <h1 class='question'>Question ${questionNum}
@@ -179,23 +172,22 @@ const startGame = function (charName, charQuestions, questionNum, imgType) {
 </div>`;
 };
 //..................................Script............................................
+
+// Event handler for character icons
 for (const icon of icons) {
-  // Event handler for character icons
+  // Show character snippet on hover
   icon.addEventListener('mouseover', function (e) {
-    // Show character snippet on hover
     if (e.target.alt === 'Goku') gokuHoverBox.classList.remove('hidden');
     if (e.target.alt === 'Yoruichi')
       yoruichiHoverBox.classList.remove('hidden');
     if (e.target.alt === 'Laxus') laxusHoverBox.classList.remove('hidden');
   });
-
+  // Hide character snippet on mouseout
   icon.addEventListener('mouseout', function () {
-    // Hide character snippet on mouseout
     hideHoverBox();
   });
-
+  // Show confirmation box on click
   icon.addEventListener('click', function (e) {
-    // Show confirmation box on click
     if (e.target.alt === 'Goku') {
       overlay.classList.remove('hidden');
       html = generateConfirmWindow('Goku', 'Dragon Ball');
@@ -215,9 +207,8 @@ for (const icon of icons) {
   });
 }
 
+// Close confirmation window
 document.addEventListener('click', function (e) {
-  console.log(e);
-  // Close confirmation window
   if (
     e.target.className === 'overlay' ||
     e.target.className === 'close__window'
@@ -225,61 +216,100 @@ document.addEventListener('click', function (e) {
     closeConfirmWindow();
   }
 
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+      closeConfirmWindow();
+    }
+  });
+
   //Begin game with Goku
   if (e.target.className === 'start Goku') {
-    startGame('goku', questionGokuOne, 'One', 'base');
+    startGame(questionGokuOne, 'One');
+    changeIcon('goku', 'base', "Let's start with an easy one.");
     gameStartedKey = 1;
   }
-
+  // On right answer move to question 2 and change icon
   if (e.target.defaultValue === 'Vegeta') {
-    startGame('goku', questionGokuTwo, 'Two', 'right');
-    html = `<p class='right__answer'>Alright! Onto the next question.</p>`;
-    container.insertAdjacentHTML('afterbegin', html);
+    startGame(questionGokuTwo, 'Two');
+    changeIcon('goku', 'right', 'Alright! Onto the next question.');
+    // On right answer move to question 3 and change icon
   } else if (e.target.defaultValue === 'Instant Transmission') {
-    startGame('goku', questionGokuThree, 'Three', 'right');
-    html = `<p class='right__answer'>Alright! Onto the next question.</p>`;
-    container.insertAdjacentHTML('afterbegin', html);
+    startGame(questionGokuThree, 'Three');
+    changeIcon('goku', 'right', 'This is it. Show me what you got!');
+    // On right answer win game and bring up window
   } else if (e.target.defaultValue === 'Fat Buu') {
     overlay.classList.remove('hidden');
     scoreBox.classList.add('hidden');
+    iconAnswer.classList.add('hidden');
     containerIcon.innerHTML = '';
     container.innerHTML = generateWonWindow();
+    // On wrong answer subtract score and change icon
   } else if (gameStartedKey === 1 && e.target.classList.contains('answer')) {
     scoreCounter();
-    changeIcon('goku', 'wrong');
-    html = `<p class='right__answer'>Aww man. I guess you need to train more.</p>`;
-    container.insertAdjacentHTML('afterbegin', html);
+    changeIcon('goku', 'wrong', 'Aww man. I guess you need to train more.');
   }
 
   //Begin game with Yoruichi
   if (e.target.className === 'start Yoruichi') {
-    startGame('yoruichi', questionYoruichiOne, 'One', 'base');
+    startGame(questionYoruichiOne, 'One');
+    changeIcon('yoruichi', 'base', 'Show me what you got!');
     gameStartedKey = 2;
   }
-
+  // On right answer move to question 2 and change icon
   if (e.target.defaultValue === 'Shunko') {
-    startGame('yoruichi', questionYoruichiTwo, 'Two', 'right');
-    html = `<p class='right__answer'>I guess you're fast after all!</p>`;
-    container.insertAdjacentHTML('afterbegin', html);
+    startGame(questionYoruichiTwo, 'Two');
+    changeIcon('yoruichi', 'right', "I guess you're pretty fast after all.");
+    // On right answer move to question 3 and change icon
   } else if (e.target.defaultValue === 'Goddess of Flash') {
-    startGame('yoruichi', questionYoruichiThree, 'Three', 'right');
-    html = `<p class='right__answer'>I guess you're fast after all!</p>`;
-    container.insertAdjacentHTML('afterbegin', html);
+    startGame(questionYoruichiThree, 'Three');
+    changeIcon(
+      'yoruichi',
+      'right',
+      "You've got some skills, but this is the real test!"
+    );
+    // On right answer win game and bring up window
   } else if (e.target.defaultValue === 'Shihoin') {
     overlay.classList.remove('hidden');
     scoreBox.classList.add('hidden');
+    iconAnswer.classList.add('hidden');
     containerIcon.innerHTML = '';
     container.innerHTML = generateWonWindow();
+    // On wrong answer subtract score and change icon
   } else if (gameStartedKey === 2 && e.target.classList.contains('answer')) {
     scoreCounter();
-    changeIcon('yoruichi', 'wrong');
-    html = `<p class='right__answer'>Is that all you've got? I'm disappointed.</p>`;
-    container.insertAdjacentHTML('afterbegin', html);
+    changeIcon(
+      'yoruichi',
+      'wrong',
+      "Is that all you've got? I'm disappointed."
+    );
   }
 
-  //Begin game with  Laxus
+  //Begin game with Laxus
   if (e.target.className === 'start Laxus') {
-    startGame('laxus', questionLaxusOne, 'One', 'base');
+    startGame(questionLaxusOne, 'One');
+    changeIcon('laxus', 'base', "Don't disappoint me.");
+    gameStartedKey = 3;
+  }
+
+  // On right answer move to question 2 and change icon
+  if (e.target.defaultValue === 'His grandfather') {
+    startGame(questionLaxusTwo, 'Two');
+    changeIcon('laxus', 'base', 'Not bad');
+    // On right answer move to question 3 and change icon
+  } else if (e.target.defaultValue === 'Lightning') {
+    startGame(questionLaxusThree, 'Three');
+    changeIcon('laxus', 'base', "Don't celebrate just yet!");
+    // On right answer win game and bring up window
+  } else if (e.target.defaultValue === 'His abdomen') {
+    overlay.classList.remove('hidden');
+    scoreBox.classList.add('hidden');
+    iconAnswer.classList.add('hidden');
+    containerIcon.innerHTML = '';
+    container.innerHTML = generateWonWindow();
+    // On wrong answer subtract score and change icon
+  } else if (gameStartedKey === 3 && e.target.classList.contains('answer')) {
+    scoreCounter();
+    changeIcon('laxus', 'wrong', 'You suck');
   }
 
   // Restart game
@@ -297,24 +327,3 @@ document.addEventListener('click', function (e) {
     container.innerHTML = html;
   }
 });
-
-document.addEventListener('keydown', function (e) {
-  // Close confirmation window
-  if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
-    closeConfirmWindow();
-  }
-});
-
-//.................................refactoring with classes?................................
-
-// class Character {
-//   constructor(charName, charIcon, charHover) {
-//     this.charName = charName;
-//     this.charIcon = charIcon;
-//     this.charHover = charHover;
-//   }
-
-//   hideHoverBox() {
-//     this.charHover.classList.add('hidden');
-//   }
-// }

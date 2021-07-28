@@ -1,6 +1,7 @@
 body {
   background-color: rgba(54, 68, 102, 1);
 }
+
 .close__window {
   position: absolute;
   top: 1.2rem;
@@ -228,25 +229,9 @@ body {
   height: 50px;
   margin: 40px;
   background: #364466;
-  font-size: 20px;
+  font-size: 15px;
   color: #ffffff;
   cursor: pointer;
-}
-
-.answer__one {
-  opacity: 1;
-}
-
-.answer__two {
-  opacity: 1;
-}
-
-.answer__three {
-  opacity: 1;
-}
-
-.answer__four {
-  opacity: 1;
 }
 
 .restart {
@@ -266,7 +251,7 @@ body {
   height: 70px;
   left: 100px;
   top: 300px;
-
+  text-align: center;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
