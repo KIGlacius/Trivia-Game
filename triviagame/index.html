@@ -7,56 +7,97 @@
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Raleway:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
     <title>Trivia Game</title>
   </head>
   <body>
-    <div class="container">
-      <div>
-        <img
-          class="header"
-          src="/imgs/chooseyourtrivia.png"
-          alt="Trivia Game"
-        />
+    <main class="container">
+      <div class="hidden overlay"></div>
+      <section class="header">Choose Your Trivia!</section>
+      <div class="icon__container">
+        <div class="icons goku">
+          <img
+            class="icon goku__icon"
+            type="image"
+            src="/imgs/goku_base.png"
+            alt="Goku"
+          />
+          <span class="hover__icon goku__hover"
+            >Hi, I’m Goku! Are you ready to test your skills? I won’t hold back!
+          </span>
+        </div>
+        <div class="icons yoruichi">
+          <img
+            class="icon yoruichi__icon"
+            type="image"
+            src="/imgs/yoruichi_base.png"
+            alt="Yoruichi"
+          />
+          <span class="hover__icon yoruichi__hover"
+            >Think you've got what it takes? Hmph. I doubt you can keep up with
+            me.
+          </span>
+        </div>
+        <div class="icons laxus">
+          <img
+            class="icon laxus__icon"
+            type="image"
+            src="/imgs/laxus_base.png"
+            alt="Laxus"
+          />
+          <span class="hover__icon laxus__hover"
+            >Challenging me? I bet you won't even get past the first
+            round.</span
+          >
+        </div>
+        <div class="icons vegeta">
+          <img
+            class="icon vegeta__icon"
+            type="image"
+            src="/imgs/vegeta_base.png"
+            alt="Vegeta"
+          />
+          <span class="hover__icon vegeta__hover"
+            >You won't even make me go Super Saiyan.</span
+          >
+        </div>
+        <div class="icons ichigo">
+          <img
+            class="icon ichigo__icon"
+            type="image"
+            src="/imgs/ichigo_base.png"
+            alt="Ichigo"
+          />
+          <span class="hover__icon ichigo__hover">Ready for our training?</span>
+        </div>
+        <div class="icons saito">
+          <img
+            class="icon saito__icon"
+            type="image"
+            src="/imgs/saito_base.png"
+            alt="Saito"
+          />
+          <span class="hover__icon saito__hover"
+            >A true swordsman can deflect my blade. Will you?</span
+          >
+        </div>
       </div>
-      <div>
-        <input
-          class="icons goku__icon"
-          type="image"
-          src="/imgs/goku_base.png"
-          alt="Goku"
-        />
-        <span class="hidden goku__hover"
-          >Hi, I’m Goku! Are you ready to test your skills? I won’t hold back!
-        </span>
-        <input
-          class="icons yoruichi__icon"
-          type="image"
-          src="/imgs/yoruichi_base.png"
-          alt="Yoruichi"
-        />
-        <span class="hidden yoruichi__hover"
-          >Think you've got what it takes? Hmph. I doubt you can keep up with
-          me.
-        </span>
-        <input
-          class="icons laxus__icon"
-          type="image"
-          src="/imgs/laxus_base.png"
-          alt="Laxus"
-        />
-        <span class="hidden laxus__hover"
-          >I bet you won't even get past the first round.</span
-        >
-      </div>
-
-      <div class="confirm__container"></div>
+    </main>
+    <div class="left">
+      <span class="icon container__icon"></span>
+      <span class="hidden right__answer"></span>
     </div>
-    <div class="hidden right__answer"></div>
-    <div class="container__icon"></div>
-    <div class="hidden overlay"></div>
-    <span class="hidden score__box">
-      <p class="score">Score</p>
-      <p class="score__num">3</p>
-    </span>
+    <div class="right">
+      <span class="score__box">
+        <p class="score">Score</p>
+        <p class="score__num">3</p>
+      </span>
+    </div>
+    <div class="confirm__container"></div>
   </body>
 </html>
