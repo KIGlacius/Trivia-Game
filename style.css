@@ -86,12 +86,6 @@ body {
   text-align: center;
 }
 
-.header {
-  width: 50%;
-  display: block;
-  margin: auto;
-}
-
 .hidden {
   display: none;
 }
@@ -168,8 +162,6 @@ body {
   font-size: 100px;
   text-align: center;
   color: #ffffff;
-  border-top: 1px solid white;
-  padding-top: 24px;
 }
 .score__box {
   max-width: 150px;
@@ -241,13 +233,64 @@ body {
   .answer {
     margin: 5px;
   }
+  .answer__field {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .answer {
+    margin: 5px;
+    width: 130px;
+  }
+  .answer__field {
+    padding: 20px;
+  }
 }
 @media screen and (max-width: 838px) {
   .answer {
     margin: 5px;
   }
+  .header {
+    font-size: 75px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .answer {
+    width: 120px;
+  }
 }
 @media screen and (max-width: 612px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .game {
+    max-width: 75%;
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+  }
+  .restart {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ffffff;
+    z-index: 1;
+    position: static;
+  }
+  .left {
+    left: 5%;
+    top: 5%;
+  }
+  .right {
+    top: 5%;
+    right: 5%;
+    left: auto;
+  }
   .answer {
     font-size: 10px;
   }
@@ -257,19 +300,34 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .right {
+    top: 8%;
+  }
+  .icon {
+    margin: 10px;
+  }
+  .hover__icon {
+    height: 75px;
+  }
   .answer {
     font-size: 10px;
   }
   .answer__field {
     padding: 20px;
   }
-  .icon {
-    width: 75px;
-    height: 75px;
-  }
-
   .right__answer {
     width: 75px;
+  }
+  .header {
+    font-size: 50px;
+  }
+  .icon__container {
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 @media screen and (max-width: 440px) {
@@ -281,6 +339,16 @@ body {
     margin-top: 30px;
   }
   .icon {
-    height: 75px;
+    height: 110px;
+  }
+  .score,
+  .score__num {
+    font-size: 25px;
+  }
+  .right__answer {
+    width: 100px;
+  }
+  .score {
+    height: 50px;
   }
 }
