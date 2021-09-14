@@ -16,8 +16,8 @@ import imgIchigoWrong from "url:/imgs/ichigo_wrong.png";
 import imgSaitoBase from "url:/imgs/saito_base.png";
 import imgSaitoRight from "url:/imgs/saito_right.png";
 import imgSaitoWrong from "url:/imgs/saito_wrong.png";
-// import "core-js/stable";
-// import "regenerator-runtime/runtime";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 //..............................Selector variables....................................
 const confirmContainer = document.querySelector(".confirm__container");

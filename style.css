@@ -354,10 +354,10 @@ body {
 
   .left {
     left: 5%;
-    top: 60%;
+    top: 65%;
   }
   .right {
-    top: 60%;
+    top: 65%;
     right: 5%;
     left: auto;
   }
@@ -369,10 +369,10 @@ body {
   }
   .left {
     left: 5%;
-    top: 65%;
+    top: 70%;
   }
   .right {
-    top: 65%;
+    top: 70%;
     right: 5%;
     left: auto;
   }
@@ -396,5 +396,12 @@ body {
   }
   .score {
     height: 50px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .left,
+  .right {
+    top: 75%;
   }
 }
