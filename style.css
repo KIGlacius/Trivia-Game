@@ -1,0 +1,286 @@
+body {
+  background-color: rgba(54, 68, 102, 1);
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.header {
+  width: 50%;
+  margin: auto;
+  font-size: 100px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon__container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 510px;
+  margin: auto;
+  margin-top: 20px;
+  border-top: 2px solid aliceblue;
+  padding-top: 20px;
+}
+
+.hover__container {
+  text-align: center;
+  max-width: 50%;
+  margin: auto;
+}
+
+.game {
+  text-align: center;
+  max-width: 50%;
+  margin: auto;
+  height: 100vh;
+}
+
+.left {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.right {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  margin-left: 75%;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+.close__window {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  color: rgb(245, 238, 238);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.confirm__selection {
+  height: 117px;
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.confirm__paragraph {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+}
+
+.header {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.icons {
+  width: 150px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.hover__icon {
+  max-width: 150px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+.confirm__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgb(0 0 0 / 30%);
+  z-index: 10;
+  background-color: rgba(54, 68, 102, 1);
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.start {
+  display: block;
+  margin: auto;
+  padding: 20px;
+  border-radius: 30%;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.start__icon {
+  max-width: 150px;
+}
+
+.question {
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+  transform: translate(0, 25%);
+}
+
+.question__text {
+  margin-top: 18px;
+  font-size: 25px;
+  border-top: 1px solid;
+  padding-top: 20px;
+}
+.score {
+  height: 89px;
+  font-size: 50px;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+.score__num {
+  font-size: 100px;
+  text-align: center;
+  color: #ffffff;
+  border-top: 1px solid white;
+  padding-top: 24px;
+}
+.score__box {
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.answer__field {
+  padding: 40px;
+  position: relative;
+  transform: translate(0, 25%);
+}
+.answer {
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  background: #364466;
+  font-size: 15px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.restart {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.right__answer {
+  padding: 10px;
+  width: 200px;
+  height: 60px;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.icon {
+  max-width: 150px;
+  border-radius: 5px;
+  height: 150px;
+  margin-bottom: 5px;
+}
+
+.highlight {
+  color: rgb(218, 120, 8);
+  font-weight: bold;
+}
+
+.container__icon {
+  max-height: 150px;
+}
+.answer:hover {
+  border: 2px solid azure;
+}
+@media screen and (max-width: 1130px) {
+  .answer {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .answer {
+    margin: 5px;
+  }
+}
+@media screen and (max-width: 838px) {
+  .answer {
+    margin: 5px;
+  }
+}
+@media screen and (max-width: 612px) {
+  .answer {
+    font-size: 10px;
+  }
+  .answer__field {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .answer {
+    font-size: 10px;
+  }
+  .answer__field {
+    padding: 20px;
+  }
+  .icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .right__answer {
+    width: 75px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .answer {
+    font-size: 10px;
+  }
+  .answer__field {
+    padding: 5px;
+    margin-top: 30px;
+  }
+  .icon {
+    height: 75px;
+  }
+}
