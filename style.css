@@ -271,10 +271,6 @@ body {
   .game {
     max-width: 75%;
   }
-  .container {
-    position: absolute;
-    top: 50%;
-  }
   .restart {
     cursor: pointer;
     font-size: 30px;
@@ -284,10 +280,10 @@ body {
   }
   .left {
     left: 5%;
-    top: 5%;
+    top: 55%;
   }
   .right {
-    top: 5%;
+    top: 55%;
     right: 5%;
     left: auto;
   }
@@ -301,7 +297,10 @@ body {
 
 @media screen and (max-width: 500px) {
   .right {
-    top: 8%;
+    top: 58%;
+  }
+  .score__box {
+    height: 150px;
   }
   .icon {
     margin: 10px;
@@ -337,6 +336,53 @@ body {
   .answer__field {
     padding: 5px;
     margin-top: 30px;
+  }
+  .icon {
+    height: 110px;
+    max-width: 110px;
+  }
+  .score,
+  .score__num {
+    font-size: 25px;
+  }
+  .right__answer {
+    width: 100px;
+  }
+  .score {
+    height: 50px;
+  }
+
+  .left {
+    left: 5%;
+    top: 60%;
+  }
+  .right {
+    top: 60%;
+    right: 5%;
+    left: auto;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .game {
+    margin-top: 10px;
+  }
+  .left {
+    left: 5%;
+    top: 60%;
+  }
+  .right {
+    top: 60%;
+    right: 5%;
+    left: auto;
+  }
+  .answer {
+    font-size: 10px;
+    width: 75px;
+  }
+  .answer__field {
+    padding: 5px;
+    margin: 20px 0;
   }
   .icon {
     height: 110px;
