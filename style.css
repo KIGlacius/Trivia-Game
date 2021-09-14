@@ -369,10 +369,10 @@ body {
   }
   .left {
     left: 5%;
-    top: 60%;
+    top: 65%;
   }
   .right {
-    top: 60%;
+    top: 65%;
     right: 5%;
     left: auto;
   }
